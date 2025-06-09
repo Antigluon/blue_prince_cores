@@ -17,13 +17,14 @@ def encode_word(numbers):
     return [encode_letter(n) for n in numbers]
 
 def core(a, b, c, d):
-    v1 = ((a - b) * c) / d 
-    v2 = ((a - b) / c) * d 
-    v3 = ((a * b) - c) / d 
-    v4 = ((a * b) / c) - d 
-    v5 = ((a / b) - c) * d 
-    v6 = ((a / b) * c) - d 
-    values = (v1,v2,v3,v4,v5,v6)
+    values = [
+        ((a - b) * c) / d,
+        ((a - b) / c) * d,
+        ((a * b) - c) / d,
+        ((a * b) / c) - d,
+        ((a / b) - c) * d, 
+        ((a / b) * c) - d, 
+    ] 
 
     return min([int(v) for v in values if v > 0 and v == int(v)], default=0)
 
